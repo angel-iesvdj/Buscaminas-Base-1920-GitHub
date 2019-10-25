@@ -14,7 +14,6 @@ public class ActionBoton implements ActionListener{
 	
 
 	public ActionBoton() {
-		//TODO
 	}
 	
 	/**
@@ -22,7 +21,6 @@ public class ActionBoton implements ActionListener{
 	 */
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		//TODO
+		
 	}
-
 }
