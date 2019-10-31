@@ -11,7 +11,7 @@ import java.util.Random;
  *
  */
 public class ControlJuego {
-	private final static int MINA = -1;
+	final static int MINA = -1;
 	final int MINAS_INICIALES = 20;
 	final int LADO_TABLERO = 10;
 
@@ -80,7 +80,7 @@ public class ControlJuego {
 		int valor=0;
 		for (int x = i-1; x <= i+1; x++) {
 			for (int y = j-1; y <= j+1; y++) {
-				if(x>=0 && y>=0 && x<10 && y<10) {
+				if(x>=0 && y>=0 && x<LADO_TABLERO && y<LADO_TABLERO) {
 					if(tablero[x][y]==MINA) {
 						valor++;
 					}
