@@ -146,7 +146,6 @@ public class VentanaPrincipal {
 			}
 		}
 		botonEmpezar.addActionListener(new ActionListener() {
-			
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				for (int i = 0; i < botonesJuego.length; i++) {
@@ -158,6 +157,7 @@ public class VentanaPrincipal {
 				for (int i = 0; i < botonesJuego.length; i++) {
 					for (int j = 0; j < botonesJuego[i].length; j++) {
 						panelesJuego[i][j].add(botonesJuego[i][j]);
+						botonesJuego[i][j].setEnabled(true);
 					}
 				}
 				refrescarPantalla();
@@ -198,14 +198,19 @@ public class VentanaPrincipal {
 				for (int j = 0; j < panelesJuego[i].length; j++) {
 					if(this.juego.getMinasAlrededor(i, j)==ControlJuego.MINA) {
 						panelesJuego[i][j].removeAll();
-						panelesJuego[i][j].add(new JLabel(new ImageIcon("mina.jpg")));
-						refrescarPantalla();
+						panelesJuego[i][j].add(new JLabel(new ImageIcon(getClass().getResource("mina.png"))));
 					}
 				}
 			}
+			refrescarPantalla();
 			JOptionPane.showMessageDialog(ventana, ("Has tocado una mina. Has perdido"));
 		}else if(this.juego.esFinJuego()){
 			JOptionPane.showMessageDialog(ventana, ("Has conseguido esquivar las minas. Has ganado."));
+		}
+		for (int i = 0; i < botonesJuego.length; i++) {
+			for (int j = 0; j < botonesJuego[i].length; j++) {
+				botonesJuego[i][j].setEnabled(false);
+			}
 		}
 	}
 
